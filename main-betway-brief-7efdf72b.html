@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · betway 访问与使用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 0 60px;
+        }
+
+        /* 顶部导航 */
+        .topnav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .topnav-brand {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 0.3px;
+            color: #111827;
+        }
+
+        .topnav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .topnav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .topnav-links a:hover {
+            color: #2563eb;
+        }
+
+        /* hero 区 */
+        .hero {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 24px;
+            padding: 48px 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #4b5563;
+            max-width: 780px;
+        }
+
+        .hero .meta-note {
+            margin-top: 24px;
+            padding: 14px 18px;
+            background: #f9fafb;
+            border-left: 4px solid #2563eb;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #1f2937;
+        }
+
+        /* 场景卡片区 (三个模块) */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border: 1px solid #e2e5ea;
+            border-radius: 20px;
+            padding: 28px 24px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .scene-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+        }
+
+        .scene-card h3 {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .scene-card p {
+            font-size: 0.95rem;
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        .scene-card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: #eef2ff;
+            color: #3b4f8c;
+            padding: 2px 12px;
+            border-radius: 99px;
+            margin-top: 12px;
+        }
+
+        /* 常见说明 / FAQ摘要 */
+        .faq-section {
+            background: #ffffff;
+            border: 1px solid #e2e5ea;
+            border-radius: 20px;
+            padding: 32px 36px;
+            margin-bottom: 36px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .faq-section h2 {
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #edf0f5;
+            padding-bottom: 12px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* 下方提示 / 访问提醒 */
+        .reminder-block {
+            background: #f8fafc;
+            border: 1px solid #dce1e9;
+            border-radius: 20px;
+            padding: 28px 32px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .reminder-block .text {
+            flex: 1 1 300px;
+        }
+
+        .reminder-block .text p {
+            font-size: 0.95rem;
+            color: #374151;
+        }
+
+        .reminder-block .url-inline {
+            background: #ffffff;
+            padding: 6px 18px;
+            border-radius: 60px;
+            border: 1px solid #d1d5db;
+            font-size: 0.9rem;
+            color: #111827;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        /* 页脚 */
+        .footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 24px;
+        }
+
+        /* 链接样式统一 */
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .scenes-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .topnav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .topnav-links {
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .hero {
+                padding: 32px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .scenes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .faq-section {
+                padding: 24px 20px;
+            }
+
+            .reminder-block {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 顶部导航 -->
+        <nav class="topnav">
+            <div class="topnav-brand">简明指南</div>
+            <ul class="topnav-links">
+                <li><a href="#intro">概览</a></li>
+                <li><a href="#scenes">场景</a></li>
+                <li><a href="#faq">说明</a></li>
+                <li><a href="#remind">访问</a></li>
+            </ul>
+        </nav>
+
+        <!-- hero 核心介绍 -->
+        <div class="hero" id="intro">
+            <h1>betway · 访问与使用简明指南</h1>
+            <p>
+                本篇介绍面向需要快速了解 betway 平台的用户，涵盖访问方式、使用场景以及常见疑问。
+                所有信息均基于公开资料整理，旨在提供简洁可靠的参考，不构成任何形式的推荐或承诺。
+            </p>
+            <div class="meta-note">
+                提醒：访问前请确认网络环境符合当地法规。平台界面与功能可能因版本更新有所调整。
+            </div>
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="scenes-grid" id="scenes">
+            <div class="scene-card">
+                <h3>日常浏览与资讯</h3>
+                <p>通过主流浏览器直接访问 <a href="https://main-betway.com">betway</a>，即可查阅体育动态、赛事数据以及娱乐内容。页面响应迅速，无须额外插件。</p>
+                <div class="tag">场景一</div>
+            </div>
+            <div class="scene-card">
+                <h3>账户管理与设置</h3>
+                <p>登录后可修改个人资料、安全偏好及通知选项。建议在安全网络下操作，并定期更新密码以保障账户安全。</p>
+                <div class="tag">场景二</div>
+            </div>
+            <div class="scene-card">
+                <h3>多设备同步访问</h3>
+                <p>无论使用桌面端、平板或手机，界面均自适应布局。通过浏览器书签保存 <a href="https://main-betway.com">betway</a>，即可在不同设备间无缝切换。</p>
+                <div class="tag">场景三</div>
+            </div>
+        </div>
+
+        <!-- 常见说明 (FAQ摘要) -->
+        <div class="faq-section" id="faq">
+            <h2>常见说明 · 摘要</h2>
+            <div class="faq-item">
+                <strong>访问 betway 是否需要注册？</strong>
+                <p>部分内容（如赛事预览、基础数据）可直接浏览；进阶功能及个性化服务需要注册账户，请以实际页面提示为准。</p>
+            </div>
+            <div class="faq-item">
+                <strong>平台支持哪些语言？</strong>
+                <p>betway 主要提供中文及英文界面，在页面底部或设置菜单中可切换语言偏好，方便不同用户使用。</p>
+            </div>
+            <div class="faq-item">
+                <strong>如何获取最新的版本信息？</strong>
+                <p>建议定期访问 <a href="https://main-betway.com">betway</a> 并关注页面公告区域，以了解功能更新、维护通知及调整说明。</p>
+            </div>
+            <div class="faq-item">
+                <strong>遇到加载问题应如何处理？</strong>
+                <p>先检查本地网络连接，尝试刷新页面或清除浏览器缓存。若问题持续，可查阅平台帮助中心或联系客服支持。</p>
+            </div>
+        </div>
+
+        <!-- 访问提醒 / 附加提示 -->
+        <div class="reminder-block" id="remind">
+            <div class="text">
+                <p><strong>访问提醒</strong><br>
+                为获得最佳体验，建议使用最新版 Chrome、Edge 或 Safari 浏览器。<br>
+                确保网络畅通，并留意设备防火墙或安全软件设置。若需要直接前往，可点击下方链接。</p>
+            </div>
+            <div>
+                <span class="url-inline">→ <a href="https://main-betway.com">betway</a></span>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>基于公开信息整理 · 内容仅供参考 · 请合规使用</p>
+        </footer>
+    </div>
+</body>
+</html>
