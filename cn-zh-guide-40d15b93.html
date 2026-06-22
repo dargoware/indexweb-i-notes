@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>betway · 杂志专题页</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #f5f3f0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #1e1e1e;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+        }
+
+        .page {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 3rem 0 4rem 0;
+        }
+
+        /* 杂志式顶部 */
+        .hero {
+            margin-bottom: 3.5rem;
+            border-bottom: 1px solid #d9d2cc;
+            padding-bottom: 2.2rem;
+        }
+
+        .hero .overline {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8f8176;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid #b1937c;
+            padding-left: 0.8rem;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: #2b231e;
+            margin: 0.4rem 0 0.6rem 0;
+            line-height: 1.2;
+        }
+
+        .hero .sub {
+            font-size: 0.95rem;
+            color: #5f534a;
+            max-width: 85%;
+            border-left: 1px solid #cbc1b8;
+            padding-left: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        /* 背景卡片 */
+        .context-card {
+            background: #fffbf8;
+            padding: 2rem 2rem 1.8rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            margin-bottom: 2.8rem;
+            border: 1px solid #e6ded6;
+        }
+
+        .context-card .tag {
+            display: inline-block;
+            background: #e5dbd2;
+            color: #3d322b;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        .context-card p {
+            font-size: 1rem;
+            color: #352d27;
+            margin-bottom: 1rem;
+        }
+
+        .context-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 三段式自然介绍 */
+        .essay-section {
+            margin-bottom: 2.8rem;
+        }
+
+        .essay-section h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            letter-spacing: -0.01em;
+            color: #2f2620;
+            margin-bottom: 0.8rem;
+            border-left: 4px solid #b99b86;
+            padding-left: 1rem;
+        }
+
+        .essay-section p {
+            font-size: 1rem;
+            color: #37302a;
+            margin-bottom: 1.2rem;
+        }
+
+        .essay-section .inset-link {
+            background: #f0ece7;
+            padding: 1.4rem 1.8rem;
+            border-radius: 14px;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1rem;
+            border: 1px solid #ddd3ca;
+        }
+
+        .inset-link a {
+            color: #4f3f33;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #b1937c;
+            padding-bottom: 1px;
+            transition: border 0.15s;
+        }
+
+        .inset-link a:hover {
+            border-bottom-color: #4f3f33;
+        }
+
+        /* FAQ摘要 — 杂志风格 */
+        .faq-digest {
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-top: 1px dotted #d5cbc2;
+            padding-top: 1.8rem;
+        }
+
+        .faq-digest h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #7f6f62;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #2b231e;
+            min-width: 6rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-item .a {
+            color: #51463d;
+            font-size: 0.95rem;
+        }
+
+        .faq-item .a a {
+            color: #3f3229;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c9b7a9;
+            font-weight: 400;
+        }
+
+        .faq-item .a a:hover {
+            text-decoration-color: #2b231e;
+        }
+
+        /* 页尾提示 */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #d9d2cc;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #665a4f;
+        }
+
+        .footer-note a {
+            color: #3d322b;
+            text-decoration: none;
+            border-bottom: 1px solid #b7a79a;
+            padding-bottom: 1px;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #1e1e1e;
+        }
+
+        .footer-note .dot-sep {
+            color: #b3a498;
+            margin: 0 0.4rem;
+        }
+
+        /* 响应 */
+        @media (max-width: 500px) {
+            .hero h1 { font-size: 2rem; }
+            .hero .sub { max-width: 100%; }
+            .context-card { padding: 1.5rem; }
+            .faq-item { flex-direction: column; gap: 0.2rem; }
+            .faq-item .q { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 杂志头部 -->
+    <div class="hero">
+        <div class="overline">专题 · 快速识别</div>
+        <h1>betway 是什么？<br>从一次浏览说起</h1>
+        <div class="sub">很多人第一次看到 betway 时，会好奇这个平台到底提供什么。与其看零散的信息，不如从一个完整的页面开始了解。</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="context-card">
+        <span class="tag">背景简述</span>
+        <p>在数字娱乐与互动内容快速迭代的今天，用户面对的选择常常多而杂。当你打开一个陌生的链接，最直接的需求往往是：<strong>它是否匹配我此刻的意图？</strong> 而 betway 正是这样一个聚合了多种线上服务的站点，它并非某个单一功能的工具，而是一个更偏向综合体验的入口。</p>
+        <p>从布局到功能分区，betway 试图让新访客在几秒内判断出自己是否来对了地方。简洁的界面背后，是对使用场景的预设：无论你带着休闲的目的，还是想浏览特定内容，这里的结构都倾向于快速引导。</p>
+    </div>
+
+    <!-- 三段自然介绍  -->
+    <div class="essay-section">
+        <h2>① 第一眼：导航与直觉</h2>
+        <p>进入 betway 后，大多数人首先会扫一眼导航区。这里没有堆砌复杂的分类，而是按照常见的需求模块做了分组。字体大小、间距、对比度都经过调整，即使是在手机屏幕上，也不会觉得拥挤。这种克制本身就是在降低认知负担——你不需要学习，只需跟随直觉。</p>
+    </div>
+
+    <div class="essay-section">
+        <h2>② 内容区：不止是陈列</h2>
+        <p>许多网站喜欢把链接和卡片铺满首屏，但 betway 的首页更注重留白与节奏。每个板块都有清晰的主标题和简短的辅助说明，信息层级一目了然。对于想快速确认平台用途的用户来说，这种设计意味着更高的效率——你不用一个个点击去猜，扫一眼就知道这里大概提供什么。</p>
+        <div class="inset-link">
+            ▸ 如果你还不确定，可以直接打开 <a href="https://cn-zh-betway.com">betway</a> 看一眼它的首页结构，比任何描述都直观。
+        </div>
+    </div>
+
+    <div class="essay-section">
+        <h2>③ 细节：针对浏览者的微体验</h2>
+        <p>从加载速度到按钮反馈，betway 在交互细节上保持了统一的轻量感。页面不滥用弹窗或自动播放，而是把选择权交给用户。对于只是路过看看的人来说，这种尊重浏览节奏的做法很加分。你不需要注册或填写任何信息，就可以自由地了解页面内容。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-digest">
+        <h3>常见疑问 · 快速摘要</h3>
+        <div class="faq-item">
+            <span class="q">betway 是做什么的？</span>
+            <span class="a">一个综合线上服务平台，提供多种数字内容与功能模块，具体可浏览 <a href="https://cn-zh-betway.com">betway</a> 首页了解。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">需要下载吗？</span>
+            <span class="a">不需要。直接通过浏览器访问即可，移动端与桌面端均适配。</span>
+        </div>
+        <div class="faq-item">
+            <span class="q">信息可靠吗？</span>
+            <span class="a">建议以官网实际展示为准，本文仅作风格介绍，不构成任何保证。</span>
+        </div>
+    </div>
+
+    <!-- 页尾 -->
+    <div class="footer-note">
+        <span>杂志式介绍 · 独立视角</span>
+        <span>
+            <a href="https://cn-zh-betway.com">betway</a>
+            <span class="dot-sep">·</span>
+            <span>仅作页面风格参考</span>
+        </span>
+    </div>
+
+</div>
+</body>
+</html>
